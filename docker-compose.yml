@@ -8,6 +8,8 @@ services:
         - 3000:3000
       depends_on:
         - db
+      env_file:
+        - .docker.env
     db:
       image: postgres:12.0-alpine
       volumes:

@@ -13,4 +13,5 @@
  *= require_tree .
  *= require_self
  *= require_buma/bulma.css
+ *= require mapbox-gl
  */
