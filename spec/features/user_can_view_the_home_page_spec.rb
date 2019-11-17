@@ -1,15 +1,17 @@
 # frozen_string_literal: true
 require 'rails_helper'
 feature 'user can view the' do
-  scenario 'home page' do
+  scenario 'login page if he/she doesn\'t have a user account' do
     visit root_path
 
-    expect(page).to have_content('Login')
-    expect(page).to have_content('Cadastrar')
+    expect(page).to have_content('Log in')
+    expect(page).to have_content('E-mail')
+    expect(page).to have_content('Cadastrar-se')
     expect(page).to have_content('Recuperar senha')
+    expect(page).to have_content("Para continuar, faça login ou registre-se.")
   end
 
-  scenario 'posts on the home page' do
+  scenario 'can view all posts after login' do
     user = create(:user)
 
     login_as user
