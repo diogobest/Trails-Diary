@@ -23,10 +23,10 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem 'rubocop-rails'
-gem "factory_bot_rails"
 gem 'draper'
-gem 'friendly_id', '~> 5.2.4' 
+gem 'factory_bot_rails'
+gem 'friendly_id', '~> 5.2.4'
+gem 'rubocop-rails'
 gem 'simplecov'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
