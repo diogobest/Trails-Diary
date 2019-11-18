@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'rails_helper'
 feature 'user can view the' do
   scenario 'login page if he/she doesn\'t have a user account' do
@@ -8,7 +9,7 @@ feature 'user can view the' do
     expect(page).to have_content('E-mail')
     expect(page).to have_content('Cadastrar-se')
     expect(page).to have_content('Esqueceu sua senha?')
-    expect(page).to have_content("Para continuar, faça login ou registre-se.")
+    expect(page).to have_content('Para continuar, faça login ou registre-se.')
   end
 
   scenario 'posts after login' do
@@ -23,7 +24,7 @@ feature 'user can view the' do
     expect(page).to have_content('Texto:')
   end
 
-  scenario 'profile page' do 
+  scenario 'profile page' do
     user = create(:user)
 
     login_as user
