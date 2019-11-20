@@ -19,9 +19,7 @@ feature 'user can view the' do
     visit root_path
 
     expect(page).to have_content('Autor:')
-    expect(page).to have_content('Localização:')
     expect(page).to have_content('Título:')
-    expect(page).to have_content('Texto:')
   end
 
   scenario 'profile page' do
