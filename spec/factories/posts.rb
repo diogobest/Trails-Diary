@@ -2,8 +2,8 @@
 
 FactoryBot.define do
   factory :post do
-    title { 'Puncak Jaya' }
-    text { "Puncak Jaya visited on day 20." }
+    title { Faker::Game.title }
+    text { Faker::Movies::Hobbit.location }
     author { nil }
     profile_id { nil }
   end
