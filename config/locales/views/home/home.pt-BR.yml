@@ -4,6 +4,7 @@ pt-BR:
     index:
       author: Autor
       title: Título
+      participate: Participar!
   layouts:
     application:
       profile: Perfil

@@ -1,20 +1,31 @@
-<!--<% @posts.each do |post| %> <!-- TODO change this view to vuejs -->
+<% @posts.each do |post| %> 
   <stong><%= t('.title') %>: <%= post.title %><br/></stong>
   <%= t('.author') %>: <%=  post.author %><br/>
 <% end %>
 
-
-
-
-<div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
   <header class="masthead mb-auto">
     <div class="inner">
-      <h3 class="masthead-brand">Cover</h3>
       <nav class="nav nav-masthead justify-content-center">
         <a class="nav-link active" href="#">Home</a>
-        <a class="nav-link" href="#">Features</a>
+        <a class="nav-link" href="#">Register</a>
         <a class="nav-link" href="#">Contact</a>
       </nav>
     </div>
   </header>
+
+  <main role="main" class="inner cover">
+    <h1 class="cover-heading">Trails-Diary.</h1>
+    <p class="lead">App to share stories about trails made by you for other people interested to know new places.</p>
+    <p class="lead">
+    <a href="#" class="btn btn-lg btn-secondary"><%= t('.participate') %></a> <!-- TODO: Text can be better -->
+    </p>
+  </main>
+
+  <footer class="mastfoot mt-auto">
+    <div class="inner">
+      <p>Trails-diary<a href="https://github.com/diogobest">GitHub</a>, by <a href="https://twitter.com/diogo47343953">@diogo47343953</a>.</p>
+    </div>
+  </footer>
 </div>
+
