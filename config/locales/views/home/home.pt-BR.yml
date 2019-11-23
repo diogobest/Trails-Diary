@@ -2,4 +2,8 @@
 pt-BR:
   home:
     index:
-      author: Autor:
+      author: Autor
+      title: Título
+  layouts:
+    application:
+      profile: Perfil

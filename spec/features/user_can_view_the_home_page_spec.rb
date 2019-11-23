@@ -14,6 +14,8 @@ feature 'user can view the' do
 
   scenario 'posts after login' do
     user = create(:user)
+    profile = create(:profile, user_id: user.id)
+    create(:post, author: profile.name, profile_id: profile.user.id)
 
     login_as user
     visit root_path
@@ -24,6 +26,7 @@ feature 'user can view the' do
 
   scenario 'profile page' do
     user = create(:user)
+    create(:profile, user_id: user.id)
 
     login_as user
     visit root_path

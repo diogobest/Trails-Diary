@@ -16,7 +16,7 @@
     <% if user_signed_in? %>
       <%= link_to 'logout', destroy_user_session_path, method: :delete%>
       <% if current_user.profile != nil %>
-        <%= link_to 'Profile', profile_path(current_user.profile) %>
+        <%= link_to t('.profile'), profile_path(current_user.profile) %>
       <% end %>
     <% else %>
       <%= link_to 'Login',new_user_session_path %>

@@ -1,4 +1,4 @@
-<% @posts.each do |post| %>
-  <%= post.title %>
-  <%= t('.author') %> <%=  post.author %>
-<%  end %>
+<% @posts.each do |post| %> <!-- TODO change this view to vuejs -->
+  <stong><%= t('.title') %>: <%= post.title %><br/></stong>
+  <%= t('.author') %>: <%=  post.author %>
+<% end %>

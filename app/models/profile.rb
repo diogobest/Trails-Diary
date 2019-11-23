@@ -2,5 +2,5 @@
 
 class Profile < ApplicationRecord
   has_many :posts
-  has_one :user
+  belongs_to :user
 end
