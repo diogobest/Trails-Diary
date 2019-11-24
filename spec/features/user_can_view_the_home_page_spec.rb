@@ -11,8 +11,7 @@ feature 'user can view ' do
   scenario 'login page if he/she doesn\'t have a user account' do
     visit root_path
 
-    expect(page).to have_content('Log in')
-    expect(page).to have_content('E-mail')
+    expect(page).to have_content('Log In')
     expect(page).to have_content('Cadastrar-se')
     expect(page).to have_content('Esqueceu sua senha?')
     expect(page).to have_content('Para continuar, faça login ou registre-se.')
@@ -38,7 +37,7 @@ feature 'user can view ' do
     login_as user
     visit root_path
 
-    expect(page).to have_content('logout')
+    expect(page).to have_content('Sair')
     expect(page).to have_link('Perfil')
   end
 end
