@@ -31,17 +31,21 @@ gem 'simplecov'
 gem 'devise'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
-gem 'mapbox-gl-rails'
 gem 'bootstrap', '~> 4.3.1'
-gem 'jquery-rails'
 gem 'draper'
+gem 'font-awesome-rails'
+gem 'jquery-rails'
+gem 'mapbox-gl-rails'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
-  gem 'faker'
   gem 'database_cleaner'
-  gem 'rubocop-rails'
   gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'rubocop-rails'
 end
 
 group :development do
