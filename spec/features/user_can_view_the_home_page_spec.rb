@@ -5,8 +5,10 @@ require 'rails_helper'
 feature 'user can view ' do
   let! (:user) { FactoryBot.create(:user) }
   let! (:profile) { FactoryBot.create(:profile, user_id: user.id) }
-  let! (:post) { FactoryBot.create(:post, author: profile.name,
-                                   profile_id: profile.user.id) }
+  let! (:post) do
+    FactoryBot.create(:post, author: profile.name,
+                             profile_id: profile.user.id)
+  end
 
   scenario 'login page if he/she doesn\'t have a user account' do
     visit root_path
@@ -18,8 +20,8 @@ feature 'user can view ' do
   end
 
   scenario 'all posts after login' do
-    other_user = create(:user) 
-    other_profile = create(:profile, user_id: other_user.id) 
+    other_user = create(:user)
+    other_profile = create(:profile, user_id: other_user.id)
     other_post = create(:post, author: other_profile.name, profile_id: other_profile.user.id)
 
     login_as user

@@ -5,9 +5,8 @@
       <div class="card">
         <div class="card-header">
           <div class="d-flex justify-content-end social_icon">
-            <span><i class="fab fa-facebook-square"></i></span>
-            <span><i class="fab fa-google-plus-square"></i></span>
-            <span><i class="fab fa-twitter-square"></i></span>
+            <span><%= link_to '', 'auth/facebook', class:'fa fa-facebook-square' %><i class="fa fa-facebook-square"></i></span>
+            <span><i class="fa fa-twitter-square"></i></span>
           </div>
           <h3>Log In</h3>
         </div>
@@ -15,13 +14,13 @@
           <form>
             <div class="input-group form-group">
               <div class="input-group-prepend">
-                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                <span class="input-group-text"><i class="fa fa-user"></i></span>
               </div>
               <%= f.email_field :email, autofocus: true, autocomplete: "email", class:'form-control' %>
             </div>
             <div class="input-group form-group">
               <div class="input-group-prepend">
-                <span class="input-group-text"><i class="fas fa-key"></i></span>
+                <span class="input-group-text"><i class="fa fa-key"></i></span>
               </div>
               <%= f.password_field :password, autocomplete: "current-password", class: "form-control"  %>
             </div>

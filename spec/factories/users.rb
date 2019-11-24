@@ -6,7 +6,7 @@ FactoryBot.define do
     password { Faker::Internet.password }
 
     trait :admin do
-      admin {true}
+      admin { true }
     end
   end
 end
