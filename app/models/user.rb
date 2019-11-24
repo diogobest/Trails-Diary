@@ -5,12 +5,13 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :omniauthable
+         :omniauthable, omniauth_providers: %i[facebook]
   has_one :profile
 
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      #byebug
       user.email = auth.info.email
       user.password = Devise.friendly_token[0, 20]
       #user.name = auth.info.name   # assuming the user model has a name
@@ -19,7 +20,7 @@ class User < ApplicationRecord
       # you use validate emails, 
       #     # uncomment the line below to skip the
       #     confirmation emails.
-      user.skip_confirmation!
+      # user.skip_confirmation!
       #           end
       #           end
     end
