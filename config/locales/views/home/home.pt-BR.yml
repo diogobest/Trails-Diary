@@ -5,6 +5,7 @@ pt-BR:
       author: Autor
       title: Título
       participate: Participar!
-  layouts:
-    application:
+  shared:
+    navbar:
       profile: Perfil
+      logout: Sair
