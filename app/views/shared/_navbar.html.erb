@@ -1,0 +1,16 @@
+<!-- navbar -->
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="masthead mb-auto">
+    <div class="inner">
+      <nav class="nav nav-masthead justify-content-center">
+        <%= link_to 'Home', root_path, class: 'nav-link active' %>
+        <% if user_signed_in? && current_user.profile != nil %>
+          <%= link_to t('.profile'), profile_path(current_user.profile), class: 'nav-link' %>
+          <%= link_to t('.logout'), destroy_user_session_path, method: :delete, class: 'nav-link'%>
+        <% else %>
+          <%= link_to t('.register'), new_user_session_path, class: 'nav-link' %>
+        <% end %>
+      </nav>
+    </div>
+  </header>
+  <!-- end of navbar -->

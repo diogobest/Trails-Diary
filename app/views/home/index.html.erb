@@ -1,0 +1,6 @@
+<% @posts.each do |post| %> 
+  <stong><%= t('.title') %>: <%= post.title %><br/></stong>
+  <%= t('.author') %>: <%=  post.author %><br/>
+<% end %>
+<%= render 'home/home_unsigned' %>
+

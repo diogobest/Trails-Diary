@@ -24,9 +24,7 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'draper'
-gem 'factory_bot_rails'
 gem 'friendly_id', '~> 5.2.4'
-gem 'rubocop-rails'
 gem 'simplecov'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -34,10 +32,16 @@ gem 'devise'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'mapbox-gl-rails'
-
+gem 'bootstrap', '~> 4.3.1'
+gem 'jquery-rails'
+gem 'draper'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'faker'
+  gem 'database_cleaner'
+  gem 'rubocop-rails'
+  gem 'factory_bot_rails'
 end
 
 group :development do

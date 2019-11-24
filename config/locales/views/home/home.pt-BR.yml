@@ -1,0 +1,12 @@
+---
+pt-BR:
+  home:
+    index:
+      author: Autor
+      title: Título
+      participate: Participar!
+  shared:
+    navbar:
+      profile: Perfil
+      logout: Sair
+      register: Registrar
