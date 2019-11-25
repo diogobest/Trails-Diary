@@ -5,10 +5,8 @@ require 'rails_helper'
 feature 'user can view ' do
   let! (:user) { FactoryBot.create(:user) }
   let! (:profile) { FactoryBot.create(:profile, user_id: user.id) }
-  let! (:post) do
-    FactoryBot.create(:post, author: profile.name,
-                             profile_id: profile.user.id)
-  end
+  let! (:post) { FactoryBot.create(:post, author: profile.name,
+                                   profile_id: profile.user.id) }
 
   scenario 'login page if he/she doesn\'t have a user account' do
     visit root_path
@@ -42,4 +40,4 @@ feature 'user can view ' do
     expect(page).to have_content('Sair')
     expect(page).to have_link('Perfil')
   end
-end
+en

@@ -6,4 +6,5 @@ Rails.application.routes.draw do
 
   root to: 'home#index'
   resources :profiles, only: %i[new show edit create]
+  resources :posts, only: %i[new show edit create]
 end
