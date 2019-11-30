@@ -1,0 +1,18 @@
+version: '3'
+services:
+    web:
+      build: .
+      volumes:
+        - .:/trails-diary
+      ports:
+        - 3000:3000
+      depends_on:
+        - db
+      env_file:
+        - .docker.env
+    db:
+      image: postgres:12.0-alpine
+      volumes:
+        - trails-db:/var/lib/postgresql/data
+volumes:
+  trails-db:
