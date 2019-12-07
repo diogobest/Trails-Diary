@@ -42,7 +42,11 @@ html,
 body {
   height: 100%;
   background-color: #333;
+<<<<<<< HEAD
   background: image-url('20190420_143157.jpg') no-repeat center center fixed;
+=======
+  background: image-url('./20190420_143157.jpg') no-repeat center center fixed;
+>>>>>>> 05bcf316bf173b7aa3e16951e9af407bf90df144
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

@@ -2,7 +2,7 @@
 ## Sumário
 
 - [Sobre](#sobre)
-  - [site](https://trailsdiary.herokuapp.com/)
+- [site](https://trailsdiary.herokuapp.com/)
 
 #sobre
 
