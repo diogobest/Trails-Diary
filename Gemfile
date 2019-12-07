@@ -43,7 +43,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'rubocop-rails'
-  gem 'binding-pry'
+  gem 'pry', '~> 0.12.2'
 end
 
 group :development do
