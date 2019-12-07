@@ -1,0 +1,9 @@
+<%= form_with model: @post do |form| %>
+  <%= form.label 'Título' %>
+  <%= form.text_field :title %>
+  <%= form.label 'Texto' %>
+  <%= form.text_area :text %>
+  <%= form.label 'Localização' %>
+  <%= form.text_field :location %>
+  <%= submit_tag('Enviar') %>
+<% end %>
