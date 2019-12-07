@@ -31,7 +31,6 @@ gem 'devise'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'bootstrap', '~> 4.4.1'
-gem 'draper'
 gem 'font-awesome-rails'
 gem 'jquery-rails'
 gem 'mapbox-gl-rails'
@@ -44,6 +43,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'rubocop-rails'
+  gem 'pry', '~> 0.12.2'
 end
 
 group :development do
