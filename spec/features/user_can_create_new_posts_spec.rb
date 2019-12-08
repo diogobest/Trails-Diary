@@ -28,7 +28,9 @@ feature 'user can create new post' do
     fill_in 'Texto', with: texto
     fill_in 'Localizacao', with: localizacao
     click_on 'Enviar'
-
+  
     expect(page).to have_content(titulo)
+    expect(page).to have_content(titulo)
+    expect(page).to have_content(texto)
   end
 end

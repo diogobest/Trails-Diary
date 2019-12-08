@@ -1,14 +1,19 @@
-  <div class="card-deck">
+<div class="card-deck">
+  <div class="card-group">
     <% @posts.each do |post| %>
       <div class="card mb-4">
-        <img class="card-img-top img-fluid" src="//placehold.it/500x280" alt="Card image cap">
-          <h5 class="card-title"><%= post.title %></h5>
-          <p class="card-text"><<%=  post.text%>/p>
-          <strong class="card-text"><small>Autor: </small> </strong>
-          <strong class="card-text"><%=  post.author %></strong>
-          <small class="text-muted">Publicado dia: 01/01/01</small>
-      </div>
+        <h5 class="card-title"><%= post.title %></h5>
+        <img class="card-img-top img-fluid" src="./assets/puncak.jpeg"
+                                            alt="Card image cap" style="opacity: .4;" width="400px">
+        <p class="card-text"><<%=  post.text%>/p>
+        <strong class="card-text"><small>Autor: </small> </strong>
+        <strong class="card-text"><%=  post.author %></strong>
+        <small class="text-muted">Publicado dia: 01/01/01</small>
+
+        <div class="card bg-dark text-white">
+        </div>
       <% end %>
+      </div>
   </div>
 </div>
 
