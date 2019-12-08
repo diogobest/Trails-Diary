@@ -3,10 +3,10 @@
 feature 'user can create new post' do
   let! (:user) { FactoryBot.create(:user) }
   let! (:profile) { FactoryBot.create(:profile, user_id: user.id) }
-  #let! (:post) do
+  # let! (:post) do
   #  FactoryBot.create(:post, author: profile.name,
   #                           profile_id: profile.user.id)
-  #end
+  # end
 
   scenario 'route to create new post' do
     login_as user
@@ -28,7 +28,7 @@ feature 'user can create new post' do
     fill_in 'Texto', with: texto
     fill_in 'Localizacao', with: localizacao
     click_on 'Enviar'
-  
+
     expect(page).to have_content(titulo)
     expect(page).to have_content(titulo)
     expect(page).to have_content(texto)
