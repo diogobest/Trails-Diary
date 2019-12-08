@@ -1,8 +1,12 @@
+# frozen_string_literal: true
+
 feature 'user can create new post' do
   let! (:user) { FactoryBot.create(:user) }
   let! (:profile) { FactoryBot.create(:profile, user_id: user.id) }
-  let! (:post) { FactoryBot.create(:post, author: profile.name,
-                                   profile_id: profile.user.id) }
+  #let! (:post) do
+  #  FactoryBot.create(:post, author: profile.name,
+  #                           profile_id: profile.user.id)
+  #end
 
   scenario 'route to create new post' do
     login_as user
@@ -13,15 +17,18 @@ feature 'user can create new post' do
   end
 
   scenario 'with basic information' do
+    titulo = Faker::Movies::Lebowski.actor
+    texto = Faker::Movies::Lebowski.quote
+    localizacao = Faker::Movies::Lebowski.character
+
     login_as user
     visit root_path
     click_on 'Nova história'
-
-    fill_in 'Título', with: Faker::Movies::Lebowski.actor 
-    fill_in 'Texto', with: Faker::Movies::Lebowski.quote
-    fill_in 'Localização', with: Faker::Movies::Lebowski.character
+    fill_in 'Titulo', with: titulo
+    fill_in 'Texto', with: texto
+    fill_in 'Localizacao', with: localizacao
     click_on 'Enviar'
 
-    expect(root_path).to have_content(Faker::Movies::Lebowski.actor)
+    expect(page).to have_content(titulo)
   end
 end
