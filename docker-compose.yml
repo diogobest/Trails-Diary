@@ -2,6 +2,7 @@ version: '3'
 services:
     web:
       build: .
+      container-name: trails_diary_web
       volumes:
         - .:/trails-diary
       ports:
@@ -12,6 +13,7 @@ services:
         - .docker.env
     db:
       image: postgres:12.0-alpine
+      container-name: trails_diary_db
       volumes:
         - trails-db:/var/lib/postgresql/data
 volumes:
