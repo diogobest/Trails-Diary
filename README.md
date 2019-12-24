@@ -6,4 +6,5 @@
 
 # Sobre
 
-- Trails Diary is a site made for share experiencies about trails.
+- Trails Diary is a site made for share experiencies, low budget travels and
+  much more. Site inspired by the instagram: @viva.zaia
