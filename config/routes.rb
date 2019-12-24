@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   root to: 'home#index'
-  resources :profiles, only: %i[new show edit create]
+  resources :profiles, only: %i[new show edit create update]
   resources :posts, only: %i[new show edit create]
 end
