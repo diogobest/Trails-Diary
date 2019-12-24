@@ -142,3 +142,7 @@ pt-BR:
       not_saved:
         one: 'Não foi possível salvar %{resource}: 1 erro'
         other: 'Não foi possível salvar %{resource}: %{count} erros.'
+
+  Sign up: "Cadastrar-se"
+  Sign in with Facebook: Acessar com o Facebook
+  Log in: Entrar

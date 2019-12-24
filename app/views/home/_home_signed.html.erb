@@ -1,9 +1,8 @@
-
 <div class="container">
   <div class="wrap">
     <% @posts.each do |post| %> 
       <div class="box one">
-      <h1> <%= post.title %></h1>
+        <h1> <%= post.title %></h1>
         <h5> <%=  post.text%></h5>
         <h5>Autor: <%=  post.author %></h5>
         <div class="poster p1">
@@ -13,4 +12,3 @@
     <% end %>
   </div>
 </div>
-
