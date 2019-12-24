@@ -7,7 +7,7 @@ feature 'user can view ' do
   let! (:profile) { FactoryBot.create(:profile, user_id: user.id) }
   let! (:post) do
     FactoryBot.create(:post, author: profile.name,
-                             profile_id: profile.user.id)
+                             profile_id: user.profile.id)
   end
 
   scenario 'cant view post without an account' do
