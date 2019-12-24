@@ -1,13 +1,20 @@
 <%= form_with model: @profile do |form| %>
-  <%= form.label 'name' %><br>
-  <%= form.text_field :name %><br>
-  <%= form.label 'age' %><br>
-  <%= form.text_field :age %><br>
-  <%= form.label 'username' %><br>
-  <%= form.text_field :username %><br>
-  <%= form.label 'city' %><br>
-  <%= form.text_field :city %><br>
-  <%= form.label 'state' %><br>
-  <%= form.text_field :state %><br>
-  <%= form.submit 'Salvar' %>
-<% end %>
+  <div class="form-row">
+    <div class="form-group col-md-6 mb-3">
+      <%= form.label t('name') %><br>
+      <%= form.text_field :name, class: 'form-control', placeholder: t('name') %><br>
+      <%= form.label t('age') %><br>
+      <%= form.text_field :age, class: 'form-control', placeholder: t('age')%><br>
+      <%= form.label t('username') %><br>
+      <div class="input-group">
+        <span class="input-group-text">@</span>
+        <%= form.text_field :username, class: 'form-control', placeholder: t('username') %><br>
+      </div>
+      <%= form.label t('city') %><br>
+      <%= form.text_field :city, class: 'form-control', placeholder: t('city') %><br>
+      <%= form.label t('state') %><br>
+      <%= form.text_field :state, class: 'form-control', placeholder: t('state')  %><br>
+      <%= form.submit 'Salvar' %>
+    </div>
+  </div>
+  <% end %>
