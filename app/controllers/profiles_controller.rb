@@ -17,7 +17,7 @@ class ProfilesController < ApplicationController
 
   def update
     @profile = Profile.find(params[:id])
-    if @profile.update(profile_params)
+    if @profile.update(permitted_params)
       redirect_to @profile
     else
       render :edit
@@ -36,7 +36,8 @@ class ProfilesController < ApplicationController
 
   private
 
-  def profile_params
-    params.require(:profile).permit(:name, :age, :user_id, :username, :city, :state)
+  def permitted_params
+    params.require(:profile)
+      .permit(:name, :age, :user_id, :username, :city, :state)
   end
 end
