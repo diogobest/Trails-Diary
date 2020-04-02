@@ -10,13 +10,20 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(params.require(:post).permit(:title, :text, :author, :location, :profile_id))
+    @post = Post.new(permitted_params)
     @post.profile_id = current_user.profile.id
     @post.author = current_user.profile.name
     if @post.save!
       redirect_to root_path
     else
       :new
+    end
+
+    private
+
+    def permitted_params
+      params.require(:post)
+        .permit(:title, :text, :author, :location, :profile_id)
     end
   end
 end
