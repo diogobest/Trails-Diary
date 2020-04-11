@@ -5,7 +5,7 @@ services:
       volumes:
         - .:/trails-diary
       ports:
-        - 3000:3000
+        - 4000:80
       depends_on:
         - db
       env_file:
