@@ -6,6 +6,7 @@ class HomeController < ApplicationController
 
   def index
     return redirect_to new_profile_path if current_user.profile.nil?
+
     @posts = Post.all
   end
 end

@@ -38,6 +38,6 @@ class ProfilesController < ApplicationController
 
   def permitted_params
     params.require(:profile)
-      .permit(:name, :age, :user_id, :username, :city, :state)
+          .permit(:name, :age, :user_id, :username, :city, :state)
   end
 end

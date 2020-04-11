@@ -24,6 +24,6 @@ class PostsController < ApplicationController
 
   def permitted_params
     params.require(:post)
-      .permit(:title, :text, :location)
+          .permit(:title, :text, :location)
   end
 end
