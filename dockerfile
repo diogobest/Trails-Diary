@@ -7,14 +7,15 @@ RUN curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
 
 RUN apt-get update -qq
 RUN apt-get install -y --no-install-recommends vim nodejs postgresql-client \
-      locales yarn 
+      locales yarn
 
 RUN mkdir /trails-diary
 WORKDIR /trails-diary
 COPY Gemfile /trails-diary/Gemfile
 COPY Gemfile.lock /trails-diary/Gemfile.lock
 RUN bundle install
+RUN yarn install
 COPY . /trails-diary
 
 # Start the main process.
-CMD ["rails", "server", "-b", "0.0.0.0"]
+# CMD ["rails", "server", "-b", "0.0.0.0"]
