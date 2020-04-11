@@ -18,12 +18,12 @@ class PostsController < ApplicationController
     else
       :new
     end
+  end
 
-    private
+  private
 
-    def permitted_params
-      params.require(:post)
-        .permit(:title, :text, :author, :location, :profile_id)
-    end
+  def permitted_params
+    params.require(:post)
+      .permit(:title, :text, :location)
   end
 end
