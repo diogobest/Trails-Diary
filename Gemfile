@@ -42,7 +42,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'factory_bot_rails'
   gem 'faker'
-  gem 'pry', '~> 0.13.0'
+  gem 'pry', '~> 0.13.1'
   gem 'rubocop-rails'
   gem 'vcr'
   gem 'webmock'
