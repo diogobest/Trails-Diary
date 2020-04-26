@@ -1,0 +1,6 @@
+<%= @hikes['trails']&.each do |body| %>
+  <p>Name: <%= body['name'] %></p>
+  <p>Sumary:  <%= body['summary'] %></p>
+  <p>Difficulty: <%= body['difficulty'] %></p>
+  <p>More info:  <%= body['url'] %></p>
+<% end %>

@@ -1,3 +1,0 @@
-class RandomHikes < ApplicationController
-
-end
