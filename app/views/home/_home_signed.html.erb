@@ -1,6 +1,12 @@
+<nav class="navbar navbar-dark bg-dark">
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-info my-2 my-sm-0" type="submit"><%= t('.search') %></button>
+  </form>
+</nav>
 <div class="container">
   <div class="wrap">
-    <% @posts.each do |post| %> 
+    <% @posts.each do |post| %>
       <div class="box one">
         <h1> <%= post.title %></h1>
         <h5> <%=  post.text%></h5>

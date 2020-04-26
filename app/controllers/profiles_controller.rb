@@ -28,7 +28,7 @@ class ProfilesController < ApplicationController
     @profile = Profile.new(permitted_params)
     @profile.user_id = current_user.id
     if @profile.save
-      redirect_to @profile
+      redirect_to root_path
     else
       render :new
     end
@@ -38,6 +38,6 @@ class ProfilesController < ApplicationController
 
   def permitted_params
     params.require(:profile)
-      .permit(:name, :age, :user_id, :username, :city, :state)
+          .permit(:name, :age, :user_id, :username, :city, :state)
   end
 end

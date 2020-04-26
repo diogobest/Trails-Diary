@@ -10,11 +10,11 @@ feature 'user can view ' do
                              profile_id: user.profile.id)
   end
 
-  scenario 'cant view post without an account' do
+  scenario 'cant view posts without an account' do
     visit root_path
 
-    expect(page).to have_content('Trails-Diary')
-    expect(page).to have_content('Share all the beautiful places you visited and')
+    expect(page).not_to have_content('Trails-Diary')
+    expect(page).not_to have_content('Share all the beautiful places you visited and')
   end
 
   scenario 'can see the navbar' do
@@ -47,14 +47,6 @@ feature 'user can view ' do
     expect(page).to have_link('Perfil')
   end
 
-  describe 'User can see ' do
-    it 'one card of a story on the home page' do
-      login_as user
-      visit root_path
-
-      expect(page).to have_selector(:css, 'div.card', count: 1)
-    end
-  end
   describe 'and cant see more than one card' do
     it 'one card of a story on the home page' do
       login_as user
