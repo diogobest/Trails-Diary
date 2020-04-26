@@ -1,12 +1,10 @@
 # frozen_string_literal: true
 
+require 'rails_helper'
+
 feature 'user can create new post' do
   let! (:user) { FactoryBot.create(:user) }
   let! (:profile) { FactoryBot.create(:profile, user_id: user.id) }
-  # let! (:post) do
-  #  FactoryBot.create(:post, author: profile.name,
-  #                           profile_id: profile.user.id)
-  # end
 
   scenario 'route to create new post' do
     login_as user

@@ -19,7 +19,7 @@ feature 'user can see menu for' do
     visit root_path
     click_on 'Perfil'
 
-    expect(page).to have_content('Salvar')
+    expect(page).to have_button('Salvar')
   end
 
   scenario 'edit profile info' do
@@ -30,7 +30,7 @@ feature 'user can see menu for' do
     fill_in 'Idade', with: 550
     click_on 'Salvar'
 
-    expect(user.profile.name).to eq('outro_nome')
-    expect(profile.age).to eq(550)
+    expect(Profile.last.name).to eq('outro_nome')
+    expect(Profile.last.age).to eq(550)
   end
 end

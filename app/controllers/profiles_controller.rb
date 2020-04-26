@@ -28,7 +28,7 @@ class ProfilesController < ApplicationController
     @profile = Profile.new(permitted_params)
     @profile.user_id = current_user.id
     if @profile.save
-      redirect_to @profile
+      redirect_to root_path
     else
       render :new
     end
