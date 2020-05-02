@@ -1,6 +1,13 @@
-<%= @hikes['trails']&.each do |body| %>
-  <p>Name: <%= body['name'] %></p>
-  <p>Sumary:  <%= body['summary'] %></p>
-  <p>Difficulty: <%= body['difficulty'] %></p>
-  <p>More info:  <%= body['url'] %></p>
-<% end %>
+<div class="card-group">
+  <% @hikes['trails'].flatten&.map do |body| %>
+    <div class="col-md-4 col-xs-6">
+      <%= image_tag("#{body['imgMedium']}", class: "card-img") %>
+      <div class="card-img-overlay">
+        <p class="card-text">Name: <%= body['name'] %></p>
+        <p class="card-text">Sumary:  <%= body['length'] %>km</p>
+        <p class="card-text">Difficulty: <%= body['difficulty'] %></p>
+        <p class="card-text">More info:  <%= body['url'] %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
