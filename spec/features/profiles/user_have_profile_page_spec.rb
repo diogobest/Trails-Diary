@@ -26,11 +26,83 @@ feature 'user can see menu for' do
     login_as user
     visit root_path
     click_on 'Perfil'
-    fill_in 'Nome', with: 'outro_nome'
-    fill_in 'Idade', with: 550
-    click_on 'Salvar'
+    within('.form') do
+      fill_in 'Nome', with: 'outro_nome'
+      fill_in 'Idade', with: 50
+      fill_in 'Usuário', with: 'user'
+      fill_in 'Cidade', with: 'Sao Paulo'
+      fill_in 'Estado', with: 'Sao Paulo'
+      click_on 'Salvar'
+    end
 
     expect(Profile.last.name).to eq('outro_nome')
-    expect(Profile.last.age).to eq(550)
+    expect(Profile.last.age).to eq(50)
+    expect(Profile.last.username).to eq('user')
+    expect(Profile.last.city).to eq('Sao Paulo')
+    expect(Profile.last.state).to eq('Sao Paulo')
+  end
+
+  scenario 'name field is required' do
+    login_as user
+    visit root_path
+    click_on 'Perfil'
+    within('.form') do
+      fill_in 'Nome', with: ''
+      fill_in 'Idade', with: 50
+      fill_in 'Usuário', with: 'user'
+      fill_in 'Cidade', with: 'Sao Paulo'
+      fill_in 'Estado', with: 'Sao Paulo'
+      click_on 'Salvar'
+    end
+
+    expect(page).to have_content(I18n.t('profiles.errors.required_field'))
+  end
+
+  scenario 'age field is required' do
+    login_as user
+    visit root_path
+    click_on 'Perfil'
+    within('.form') do
+      fill_in 'Nome', with: 'name'
+      fill_in 'Idade', with: ''
+      fill_in 'Usuário', with: 'user'
+      fill_in 'Cidade', with: 'Sao Paulo'
+      fill_in 'Estado', with: 'Sao Paulo'
+      click_on 'Salvar'
+    end
+
+    expect(page).to have_content(I18n.t('profiles.errors.required_field'))
+  end
+
+  scenario 'age is invalid if it is less than 12' do
+    login_as user
+    visit root_path
+    click_on 'Perfil'
+    within('.form') do
+      fill_in 'Nome', with: 'usuario'
+      fill_in 'Idade', with: 11
+      fill_in 'Usuário', with: 'user'
+      fill_in 'Cidade', with: 'Sao Paulo'
+      fill_in 'Estado', with: 'Sao Paulo'
+      click_on 'Salvar'
+    end
+
+    expect(page).to have_content(I18n.t('profiles.errors.invalid_age'))
+  end
+
+  scenario 'age is invalid if it is greater than 120' do
+    login_as user
+    visit root_path
+    click_on 'Perfil'
+    within('.form') do
+      fill_in 'Nome', with: 'usuario'
+      fill_in 'Idade', with: 121
+      fill_in 'Usuário', with: 'user'
+      fill_in 'Cidade', with: 'Sao Paulo'
+      fill_in 'Estado', with: 'Sao Paulo'
+      click_on 'Salvar'
+    end
+
+    expect(page).to have_content(I18n.t('profiles.errors.invalid_age'))
   end
 end

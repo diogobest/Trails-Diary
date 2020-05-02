@@ -13,10 +13,12 @@ class PostsController < ApplicationController
     @post = Post.new(permitted_params)
     @post.profile_id = current_user.profile.id
     @post.author = current_user.profile.name
-    if @post.save!
+    if @post.save
+      flash[:notice] = I18n.translate('posts.created')
       redirect_to root_path
     else
-      :new
+      flash.now[:alert] = I18n.translate('posts.required_field')
+      redirect_back(fallback_location: {action: 'new'})
     end
   end
 
@@ -24,6 +26,6 @@ class PostsController < ApplicationController
 
   def permitted_params
     params.require(:post)
-          .permit(:title, :text, :location)
+      .permit(:title, :text, :location)
   end
 end
