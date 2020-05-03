@@ -1,7 +1,7 @@
 <div class="card-group">
   <% @hikes['trails'].flatten&.map do |body| %>
     <div class="col-md-4 col-xs-6">
-      <%= image_tag("#{body['imgMedium']}", class: "card-img") %>
+      <%= image_tag("#{body['imgMedium']}", class: "card-img", size: '300') %>
       <div class="card-img-overlay">
         <p class="card-text">Name: <%= body['name'] %></p>
         <p class="card-text">Sumary:  <%= body['length'] %>km</p>
