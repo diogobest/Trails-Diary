@@ -1,5 +1,4 @@
-<%= flash[:error] %>
-<%= flash[:notice] %>
+<%= render 'shared/messages' %>
 <%= form_with model: @post do |form| %>
   <div class="d-flex mx-auto justify-content-center form">
     <div class="card">
