@@ -225,3 +225,15 @@ pt-BR:
   shared:
     navbar:
       find_new_hikes: 'Descubra novos lugares'
+
+  profiles:
+    updated: "Perfil atualizado"
+    created: "Perfil criado"
+    errors:
+      required_field: "Campo obrigatório não preenchido"
+      invalid_age: "Idade Inválida"
+
+  posts:
+    updated: "Post atualizado"
+    created: "Post criado"
+    required_field: "Campo obrigatório não preenchido"

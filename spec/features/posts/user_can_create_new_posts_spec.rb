@@ -17,17 +17,18 @@ feature 'user can create new post' do
   scenario 'with basic information' do
     titulo = Faker::Movies::Lebowski.actor
     texto = Faker::Movies::Lebowski.quote
-    localizacao = Faker::Movies::Lebowski.character
+    localizacao = "Sao Paulo"
 
     login_as user
     visit root_path
     click_on 'Nova história'
-    fill_in 'Titulo', with: titulo
-    fill_in 'Texto', with: texto
-    fill_in 'Localizacao', with: localizacao
-    click_on 'Enviar'
+    within('.form') do
+      fill_in 'Titulo', with: titulo
+      fill_in 'Texto', with: texto
+      fill_in 'Localizacao', with: localizacao
+      click_on 'Enviar'
+    end
 
-    expect(page).to have_content(titulo)
     expect(page).to have_content(titulo)
     expect(page).to have_content(texto)
   end
