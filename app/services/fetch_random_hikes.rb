@@ -9,6 +9,7 @@ class FetchRandomHikes
     response = Faraday.get(url) do |req|
       req.params['lat'] = latitude
       req.params['lon'] = longitude
+      req.params['maxResults'] = limit_per_query
       req.params['key'] = key
       req.headers['Content-Type'] = 'application/json'
     end
@@ -29,5 +30,9 @@ class FetchRandomHikes
 
   def self.longitude
     Random.new.rand(-107..-104)
+  end
+
+  def self.limit_per_query
+    9
   end
 end
