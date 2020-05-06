@@ -16,7 +16,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to root_path
     else
-      flash[:alert] = "Informações inválidas"
+      flash[:alert] = I18n.translate('posts.required_field')
       redirect_back(fallback_location: {action: 'new'})
     end
   end
