@@ -1,11 +1,11 @@
 <div id='map'></div>
 <script>
-  mapboxgl.accessToken = 'pk.eyJ1IjoiZGlvZ29iZXN0IiwiYSI6ImNrMzNjZGM3cjBqczMzY21tODZjeWFwZnUifQ.wXym2s3Kqlee4VvunWbA7A'; 
-  var map = new mapboxgl.Map({
+  mapboxgl.accessToken ="<%=ENV.fetch('MAPBOX_KEY') %>";
+  let map = new mapboxgl.Map({
   container: 'map',
-  style: 'mapbox://styles/diogobest/ck4k9hu0s5g8h1cp9a0g6qlad', // replace this with your style URL
+  style: 'mapbox://styles/mapbox/streets-v11', // replace this with your style URL
   center: [-87.661557, 41.893748],
-  zoom: 10.7
+  zoom: 9
 });
 </script>
 </div>

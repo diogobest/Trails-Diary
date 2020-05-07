@@ -33,6 +33,21 @@ feature 'user can create new post' do
     expect(page).to have_content(texto)
   end
 
+  scenario 'with basic information' do
+    titulo = Faker::Movies::Lebowski.actor
+    texto = Faker::Movies::Lebowski.quote
+    localizacao = "Sao Paulo"
+
+    login_as user
+    visit root_path
+    click_on 'Nova história'
+    within('.form') do
+      fill_in 'Titulo', with: titulo
+      fill_in 'Texto', with: texto
+      fill_in 'Localizacao', with: localizacao
+      click_on 'Enviar'
+    end
+
   scenario 'user can view details of trail' do
     login_as user
     visit root_path
