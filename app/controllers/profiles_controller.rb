@@ -22,11 +22,11 @@ class ProfilesController < ApplicationController
       redirect_to @profile
     else
       flash[:alert] = I18n.t('profiles.errors.required_field')
-      redirect_back(fallback_location: {action: 'edit'})
+      redirect_back(fallback_location: { action: 'edit' })
     end
   rescue CustomExceptions::InvalidAge
     flash[:alert] = I18n.t('profiles.errors.invalid_age')
-    redirect_back(fallback_location: {action: 'edit'})
+    redirect_back(fallback_location: { action: 'edit' })
   end
 
   def create
@@ -37,11 +37,11 @@ class ProfilesController < ApplicationController
       redirect_to root_path
     else
       flash.now[:alert] = I18n.t('profiles.errors.required_field')
-      redirect_back(fallback_location: {action: 'new'})
+      redirect_back(fallback_location: { action: 'new' })
     end
   rescue CustomExceptions::InvalidAge
     flash[:alert] = I18n.t('profiles.errors.invalid_age')
-    redirect_back(fallback_location: {action: 'create'})
+    redirect_back(fallback_location: { action: 'create' })
   end
 
   private

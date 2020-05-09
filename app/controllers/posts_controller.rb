@@ -17,13 +17,13 @@ class PostsController < ApplicationController
       redirect_to root_path
     else
       flash[:alert] = I18n.translate('posts.required_field')
-      redirect_back(fallback_location: {action: 'new'})
+      redirect_back(fallback_location: { action: 'new' })
     end
   end
 
   private
 
   def permitted_params
-    params.require(:post).permit(:title, :text, :location)
+    params.require(:post).permit(:title, :text, :state)
   end
 end

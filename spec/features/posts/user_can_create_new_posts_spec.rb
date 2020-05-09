@@ -17,7 +17,7 @@ feature 'user can create new post' do
   scenario 'with basic information' do
     titulo = Faker::Movies::Lebowski.actor
     texto = Faker::Movies::Lebowski.quote
-    localizacao = "Sao Paulo"
+    state = "SP"
 
     login_as user
     visit root_path
@@ -25,7 +25,7 @@ feature 'user can create new post' do
     within('.form') do
       fill_in 'Titulo', with: titulo
       fill_in 'Texto', with: texto
-      fill_in 'Localizacao', with: localizacao
+      fill_in 'Estado', with: state
       click_on 'Enviar'
     end
 
@@ -36,7 +36,7 @@ feature 'user can create new post' do
   scenario 'with basic information' do
     titulo = Faker::Movies::Lebowski.actor
     texto = Faker::Movies::Lebowski.quote
-    localizacao = "Sao Paulo"
+    state = "SP"
 
     login_as user
     visit root_path
@@ -44,9 +44,10 @@ feature 'user can create new post' do
     within('.form') do
       fill_in 'Titulo', with: titulo
       fill_in 'Texto', with: texto
-      fill_in 'Localizacao', with: localizacao
+      fill_in 'Estado', with: state
       click_on 'Enviar'
     end
+  end
 
   scenario 'user can view details of trail' do
     login_as user
@@ -55,7 +56,7 @@ feature 'user can create new post' do
     within('.form') do
       fill_in 'Titulo', with: 'São Paulo'
       fill_in 'Texto', with: 'São Paulo is amazing'
-      fill_in 'Localizacao', with: 'SP'
+      fill_in 'Estado', with: 'SP'
       click_on 'Enviar'
     end
 

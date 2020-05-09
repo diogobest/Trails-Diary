@@ -15,8 +15,8 @@ gem 'puma', '~> 4.3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem 'webpacker', '~> 5.1'
 gem 'react-rails'
+gem 'webpacker', '~> 5.1'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -45,6 +45,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'pry-byebug'
+  gem 'rubocop-performance'
   gem 'rubocop-rails'
   gem 'vcr'
   gem 'webmock'
