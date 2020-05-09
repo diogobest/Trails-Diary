@@ -1,5 +1,6 @@
-class ValidateProfile
+# frozen_string_literal: true
 
+class ValidateProfile
   attr_reader :params
 
   def initialize(params:)
@@ -15,7 +16,7 @@ class ValidateProfile
 
   def validate_age
     if (params[:age].to_i < 12 || params[:age].to_i > 120) && params[:age].present?
-      raise CustomExceptions::InvalidAge.new
+      raise CustomExceptions::InvalidAge
     end
   end
 end

@@ -1,5 +1,4 @@
-<%= flash[:error] %>
-<%= flash[:notice] %>
+<%= render 'shared/messages' %>
 <%= form_with model: @post do |form| %>
   <div class="d-flex mx-auto justify-content-center form">
     <div class="card">
@@ -9,11 +8,12 @@
           <%= form.text_field :title, class: 'form-control'%>
           <%= form.label :text, 'Texto' %>
           <%= form.text_area :text, class: 'form-control' %>
-          <%= form.label :location, 'Localizacao' %>
-          <%= form.text_field :location, class: 'form-control' %>
+          <%= form.label :state, 'Estado' %>
+          <%= form.text_field :state, class: 'form-control' %>
           <%= submit_tag('Enviar', class: 'btn btn-primary')%>
         </div>
       </div>
     </div>
   </div>
 <% end %>
+

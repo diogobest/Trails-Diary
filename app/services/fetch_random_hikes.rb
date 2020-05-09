@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class FetchRandomHikes
   def self.fetch_hikes
     conn
@@ -21,7 +23,7 @@ class FetchRandomHikes
   end
 
   def self.key
-    ENV.fetch("HIKING_PROJECT_API")
+    ENV.fetch('HIKING_PROJECT_API')
   end
 
   def self.latitude
