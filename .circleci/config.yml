@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  ruby: circleci/ruby@0.1.2 
+  ruby: circleci/ruby@0.1.2
 
 jobs:
   build:
@@ -13,10 +13,15 @@ jobs:
           name: Rubocop ok?
           command: bundle exec rubocop --config .rubocop.yml
       - run:
-          name: tests ok?
+          name: prepare tests!
           command: RAILS_ENV=test bundle exec rake db:test:prepare
+      - run:
+          name: tests ok?
           command: bundle exec rspec
       - run:
-          name: Gems ok?
+          name: audit Gems!
           command: bundle-audit check --update
+
+      - run:
+          name: install gems!
           command: ruby/bundle-install
