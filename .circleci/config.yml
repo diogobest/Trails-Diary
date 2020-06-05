@@ -10,6 +10,13 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Which bundler?
-          command: bundle -v
-      - ruby/bundle-install
+          name: Rubocop ok?
+          command: bundle exec rubocop --config .rubocop.yml
+      - run:
+          name: tests ok?
+          command: RAILS_ENV=test bundle exec rake db:test:prepare
+          command: bundle exec rspec
+      - run:
+          name: Gems ok?
+          command: bundle-audit check --update
+          command: ruby/bundle-install
