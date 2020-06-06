@@ -10,6 +10,18 @@ jobs:
     steps:
       - checkout
       - run:
+          name: install bundler!
+          command: gem install bundler
+      - run:
+          name: install bundler-audit!
+          command: gem install bundle-audit
+      - run:
+          name: audit Gems!
+          command: bundle-audit check --update
+      - run:
+          name: install gems!
+          command: ruby/bundle-install
+      - run:
           name: Rubocop ok?
           command: bundle exec rubocop --config .rubocop.yml
       - run:
@@ -18,10 +30,3 @@ jobs:
       - run:
           name: tests ok?
           command: bundle exec rspec
-      - run:
-          name: audit Gems!
-          command: bundle-audit check --update
-
-      - run:
-          name: install gems!
-          command: ruby/bundle-install
