@@ -20,7 +20,7 @@ jobs:
           command: bundle-audit check --update
       - run:
           name: install gems!
-          command: ruby/bundle-install
+          command: bundle install
       - run:
           name: Rubocop ok?
           command: bundle exec rubocop --config .rubocop.yml
