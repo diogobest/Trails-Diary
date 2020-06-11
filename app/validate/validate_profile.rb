@@ -15,8 +15,6 @@ class ValidateProfile
   private
 
   def validate_age
-    if (params[:age].to_i < 12 || params[:age].to_i > 120) && params[:age].present?
-      raise CustomExceptions::InvalidAge
-    end
+    raise CustomExceptions::InvalidAge if (params[:age].to_i < 12 || params[:age].to_i > 120) && params[:age].present?
   end
 end

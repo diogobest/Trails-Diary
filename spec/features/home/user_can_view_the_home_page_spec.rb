@@ -3,9 +3,9 @@
 require 'rails_helper'
 
 feature 'user can view ' do
-  let! (:user) { FactoryBot.create(:user) }
-  let! (:profile) { FactoryBot.create(:profile, user_id: user.id) }
-  let! (:post) do
+  let!(:user) { FactoryBot.create(:user) }
+  let!(:profile) { FactoryBot.create(:profile, user_id: user.id) }
+  let!(:post) do
     FactoryBot.create(:post, author: profile.name,
                              profile_id: user.profile.id)
   end

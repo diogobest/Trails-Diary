@@ -5,8 +5,6 @@ class FetchRandomHikes
     conn
   end
 
-  private
-
   def self.conn
     response = Faraday.get(url) do |req|
       req.params['lat'] = latitude

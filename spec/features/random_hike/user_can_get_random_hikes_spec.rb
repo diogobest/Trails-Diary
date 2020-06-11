@@ -3,8 +3,8 @@
 require 'rails_helper'
 
 feature 'user get random hikes recomendations' do
-  let! (:user) { FactoryBot.create(:user) }
-  let! (:profile) { FactoryBot.create(:profile, user_id: user.id) }
+  let!(:user) { FactoryBot.create(:user) }
+  let!(:profile) { FactoryBot.create(:profile, user_id: user.id) }
 
   scenario 'Link to view random hikes' do
     login_as user

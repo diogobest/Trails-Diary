@@ -3,8 +3,8 @@
 require 'rails_helper'
 
 feature 'user can create new post' do
-  let! (:user) { FactoryBot.create(:user) }
-  let! (:profile) { FactoryBot.create(:profile, user_id: user.id) }
+  let!(:user) { FactoryBot.create(:user) }
+  let!(:profile) { FactoryBot.create(:profile, user_id: user.id) }
 
   scenario 'route to create new post' do
     login_as user
@@ -17,7 +17,7 @@ feature 'user can create new post' do
   scenario 'with basic information' do
     titulo = Faker::Movies::Lebowski.actor
     texto = Faker::Movies::Lebowski.quote
-    state = "SP"
+    state = 'SP'
 
     login_as user
     visit root_path
@@ -36,7 +36,7 @@ feature 'user can create new post' do
   scenario 'with basic information' do
     titulo = Faker::Movies::Lebowski.actor
     texto = Faker::Movies::Lebowski.quote
-    state = "SP"
+    state = 'SP'
 
     login_as user
     visit root_path

@@ -3,8 +3,8 @@
 require 'rails_helper'
 
 feature 'user can see menu for' do
-  let! (:user) { FactoryBot.create(:user) }
-  let! (:profile) { FactoryBot.create(:profile, user_id: user.id) }
+  let!(:user) { FactoryBot.create(:user) }
+  let!(:profile) { FactoryBot.create(:profile, user_id: user.id) }
 
   scenario 'profile page' do
     login_as user
