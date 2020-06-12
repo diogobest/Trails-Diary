@@ -24,9 +24,9 @@ jobs:
       # - run:
           # name: Rubocop ok?
           # command: bundle exec rubocop --config .rubocop.yml
-      - run:
-          name: prepare tests!
-          command: RAILS_ENV=test bundle exec rake db:test:prepare
+      # - run:
+          # name: prepare tests!
+          # command: RAILS_ENV=test bundle exec rake db:test:prepare
       - run:
           name: tests ok?
           command: bundle exec rspec
