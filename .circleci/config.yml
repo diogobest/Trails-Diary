@@ -15,9 +15,9 @@ jobs:
       - run:
           name: install bundler-audit!
           command: gem install bundle-audit
-      - run:
-          name: audit Gems!
-          command: bundle-audit check --update
+      # - run:
+          # name: audit Gems!
+          # command: bundle-audit check --update
       - run:
           name: install gems!
           command: bundle install
