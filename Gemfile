@@ -36,7 +36,7 @@ gem 'bootstrap', '~> 4.5.0'
 gem 'font-awesome-rails'
 gem 'jquery-rails'
 gem 'mapbox-gl-rails'
-gem 'omniauth-facebook'
+# gem 'omniauth-facebook'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
