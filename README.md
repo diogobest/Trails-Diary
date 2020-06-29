@@ -12,6 +12,8 @@
 # config
 
 - Run `docker-compose run --rm web rails db:create`
+- Run bin/setup
+- Run rails db:seed
 
 # Running
 

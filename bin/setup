@@ -35,4 +35,11 @@ FileUtils.chdir APP_ROOT do
 
   puts "\n== Restarting application server =="
   system! 'bin/rails restart'
+
+  puts '\n== Installing webpack dependencies =='
+  system! 'yarn install'
+
+  puts '\n== Installing seeds =='
+  system! 'bundle exec rails db:seed'
+
 end
