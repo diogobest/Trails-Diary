@@ -1,0 +1,11 @@
+<div class="card">
+  <div class="card-header">
+  </div>
+  <div class="card-body">
+    <%= @post.text %>
+    <footer class="blockquote-footer">Author: <cite title="Source Title"> <%= @post.author %></cite></footer>
+    <div class="card-footer text-muted">
+      Written date: <%= @post.created_at %>
+    </div>
+  </div>
+</div>

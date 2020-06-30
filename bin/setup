@@ -41,5 +41,4 @@ FileUtils.chdir APP_ROOT do
 
   puts '\n== Installing seeds =='
   system! 'bundle exec rails db:seed'
-
 end
