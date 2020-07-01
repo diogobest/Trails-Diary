@@ -14,6 +14,11 @@
 - Run `docker-compose run --rm web rails db:create`
 - Run bin/setup
 - Run rails db:seed
+- To run the discover a random trail you will need to configure the following
+  environement variable on your .env file:
+  - HIKING_PROJECT_API=
+- hiking project: https://www.hikingproject.com/data
+
 
 # Running
 

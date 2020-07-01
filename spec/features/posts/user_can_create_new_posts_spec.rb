@@ -46,8 +46,7 @@ feature 'user can create new post' do
         click_on 'Enviar'
       end
 
-      expect(page).to have_content("${count} characters is allowed")
-      expect(page).to have_content(text)
+      expect(page).to have_content("2 characters is allowed")
     end
   end
   scenario 'with basic information' do
