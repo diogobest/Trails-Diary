@@ -5,45 +5,58 @@ require 'rails_helper'
 feature 'user can create new post' do
   let!(:user) { FactoryBot.create(:user) }
   let!(:profile) { FactoryBot.create(:profile, user_id: user.id) }
+  let(:title) { Faker::Movies::Lebowski.actor }
+  let(:text) { Faker::Movies::Lebowski.quote }
+  let(:state) { 'SP' }
 
-  scenario 'route to create new post' do
-    login_as user
-    visit root_path
-    click_on 'Nova história'
+  context 'user have tool to create new post' do
+    scenario 'route to create new post' do
+      login_as user
+      visit root_path
+      click_on 'Nova história'
 
-    expect(page).to have_link('Nova história')
-  end
-
-  scenario 'with basic information' do
-    titulo = Faker::Movies::Lebowski.actor
-    texto = Faker::Movies::Lebowski.quote
-    state = 'SP'
-
-    login_as user
-    visit root_path
-    click_on 'Nova história'
-    within('.form') do
-      fill_in 'Titulo', with: titulo
-      fill_in 'Texto', with: texto
-      fill_in 'Estado', with: state
-      click_on 'Enviar'
+      expect(page).to have_link('Nova história')
     end
 
-    expect(page).to have_content(titulo)
-    expect(page).to have_content(texto)
+    scenario 'with basic information' do
+      login_as user
+      visit root_path
+      click_on 'Nova história'
+      within('.form') do
+        fill_in 'Titulo', with: title
+        fill_in 'Texto', with: text
+        fill_in 'Estado', with: state
+        click_on 'Enviar'
+      end
+
+      expect(page).to have_content(title)
+      expect(page).to have_content(text)
+    end
   end
 
-  scenario 'with basic information' do
-    titulo = Faker::Movies::Lebowski.actor
-    texto = Faker::Movies::Lebowski.quote
-    state = 'SP'
+  context 'user cannot create post with invalid info' do
+    scenario 'invalid state' do
+      login_as user
+      visit root_path
+      click_on 'Nova história'
+      within('.form') do
+        fill_in 'Titulo', with: title
+        fill_in 'Texto', with: text
+        fill_in 'Estado', with: 'ABC'
+        click_on 'Enviar'
+      end
 
+      expect(page).to have_content("${count} characters is allowed")
+      expect(page).to have_content(text)
+    end
+  end
+  scenario 'with basic information' do
     login_as user
     visit root_path
     click_on 'Nova história'
     within('.form') do
-      fill_in 'Titulo', with: titulo
-      fill_in 'Texto', with: texto
+      fill_in 'Titulo', with: title
+      fill_in 'Texto', with: text
       fill_in 'Estado', with: state
       click_on 'Enviar'
     end

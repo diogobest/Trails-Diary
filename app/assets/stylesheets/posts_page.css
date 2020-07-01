@@ -1,0 +1,4 @@
+.card-centered .parent {
+  display: grid;
+  place-items: center;
+}

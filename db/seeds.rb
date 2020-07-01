@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 User.create(email: 'teste@teste.com', password: '123456')
-Profile.create!(name: 'Rafael', age: 27, user_id: User.first.id)
+Profile.create!(name: Faker::Name.name, age: 27, user_id: User.first.id)
 Post.create!(title: 'São Bento do Sapucaí',
              text: 'São Bento do Sapucaí is a Brazilian municipality in São Paulo state.  Once known as a religious and traditional town, the municipality of São Bento do Sapucaí, now with its population reaching 10,000 inhabitants, is known for its mild weather, beautiful landscapes, and great conditions for the practice of many action sports. by wikipedia',
              state: 'MG',
