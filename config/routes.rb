@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :profiles, only: %i[new show edit create update]
   resources :posts, only: %i[new show edit create]
   resources :random_hikes, only: %i[index]
+  get :search, to: 'random_hikes#search'
 end

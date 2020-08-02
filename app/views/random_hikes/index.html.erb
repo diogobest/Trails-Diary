@@ -1,17 +1,17 @@
-<%= form_with(url: "/search", method: "get", class: "form-inline my-2 my-lg-0 search_bar") do %>
-  <%= text_field_tag(:q, class: "form-control mr-sm-2") %>
+<%= form_with(url: search_path, method: "get", class: "form-inline my-2 my-lg-0 search_bar") do %>
+  <%= text_field_tag(:search, params[:search], class: "form-control mr-sm-2") %>
   <%= submit_tag("Search", class: 'btn btn-outline-success my-2 my-sm-0') %>
 <% end %>
 <div class="card-group">
-  <%# <% @hikes['trails'].flatten&.map do |body| %>
-    <%#   <div class="col-mb-3">
-      <%#     <%= image_tag("#{body['imgMedium']}", class: "card-img", size: '300') %>
-      <%#     <div class="card-img-overlay">
-        <%#       <p class="card-text">Name: <%= body['name'] %></p>
-        <%#       <p class="card-text">Sumary:  <%= body['length'] %>km</p>
-        <%#       <p class="card-text">Difficulty: <%= body['difficulty'] %></p>
-        <%#       <p class="card-text">More info:  <%= body['url'] %></p>
-        <%#     </div>
-      <%#   </div>
-    <%# <% end %>
-  </div>
+  <% @hikes['trails'].flatten&.map do |body| %>
+    <div class="col-mb-3">
+      <%= image_tag("#{body['imgMedium']}", class: "card-img", size: '300') %>
+      <div class="card-img-overlay">
+        <p class="card-text">Name: <%= body['name'] %></p>
+        <p class="card-text">Sumary:  <%= body['length'] %>km</p>
+        <p class="card-text">Difficulty: <%= body['difficulty'] %></p>
+        <p class="card-text">More info:  <%= body['url'] %></p>
+      </div>
+    </div>
+  <% end %>
+</div>

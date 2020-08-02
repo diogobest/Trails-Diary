@@ -27,4 +27,9 @@ describe FetchRandomHikes do
 
     expect(var).not_to be_empty
   end
+
+  it 'has a limit per query of ten itens' do
+    expect(described_class).to receive(:limit_per_query).and_return(9)
+    described_class.limit_per_query
+  end
 end
