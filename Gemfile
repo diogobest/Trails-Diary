@@ -25,7 +25,7 @@ gem 'jbuilder', '~> 2.10'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem 'friendly_id', '~> 5.3.0'
+gem 'friendly_id', '~> 5.4.1'
 gem 'simplecov'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
