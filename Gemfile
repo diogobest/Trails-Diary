@@ -32,7 +32,7 @@ gem 'simplecov'
 gem 'devise'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
-gem 'bootstrap', '~> 4.5.0'
+gem 'bootstrap', '~> 5.0.1'
 gem 'font-awesome-rails'
 gem 'jquery-rails'
 gem 'mapbox-gl-rails'
